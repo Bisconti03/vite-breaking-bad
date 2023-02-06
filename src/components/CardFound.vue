@@ -1,7 +1,19 @@
 <script >
+import {store} from '../store';
 
 export default {
-  name: 'CardFound'
+  name: 'CardFound',
+  // props: {
+  //   cardsFound: {
+  //     type: Number,
+  //     default: 0
+  //   }
+  // },
+  data() {
+    return {
+      store
+    }
+  },
 }
 
 </script>
@@ -11,7 +23,7 @@ export default {
     <div class="col mx-5 bg-black ">
 
         <p class="text-light pt-2 fw-bold">
-            Found 39 Cards
+            Found {{store.cards.length}} Cards
         </p>
 
     </div>

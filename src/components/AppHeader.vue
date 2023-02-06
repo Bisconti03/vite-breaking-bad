@@ -8,8 +8,8 @@ export default {
 
 <template>
   <header>
-    <header>
-      <div class="row ">
+    <header class="">
+      <div class="row g-0">
         <div class="col-1">
 
           <img src="../assets/img/Yu-Gi-Oh!_(Logo).jpg" class="w-100" alt="">
