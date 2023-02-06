@@ -40,7 +40,7 @@ export default {
 
   
   <AppHeader/>
-  <div class="bg-primary vh-100 ">
+  <div class="bg-primary  ">
     <DropDown />
 
     <AppMain  />
