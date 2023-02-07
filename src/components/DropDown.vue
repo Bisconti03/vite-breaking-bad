@@ -22,9 +22,9 @@ export default {
 
       
 
-      this.store.archetypes  = response.data.results;
+      this.store.archetypes  = response.data;
 
-      console.log(response)
+      console.log(response.data)
 
     });
   }
@@ -36,14 +36,27 @@ export default {
   <div class="container">
     <div class="row">
         <div class="col bg-primary">
+
+          
+
             <div  class="dropdown py-3">
-              <select  class="form-select multiple w-25" aria-label="Default select example">
-                <option selected>Archetype</option >
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+              <select v-model="store.variableArchetype" class="form-select multiple w-25" aria-label="Default select example">
+                <option  selected value="">Archetype</option >
+                <option 
+                @click="$emit('search')"
+                v-for="archetype in store.archetypes" 
+                value="1"
+                >{{archetype.archetype_name }}
+                </option>
+                 
               </select>
+
+             
             </div>
+
+
+          
+            
 
         </div>
 

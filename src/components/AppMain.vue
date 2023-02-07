@@ -1,4 +1,5 @@
-<script>
+<script >
+import axios from 'axios';
 import CardFound from './CardFound.vue'
 import Card from './Card.vue'
 import {store} from '../store';
@@ -18,6 +19,28 @@ export default {
     CardFound,
     Card,
     DropDown,
+  },
+
+  methods: {
+      filterArchetype() {
+        axios
+      .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.variableArchetype)
+      .then((response) => {
+      console.log(response.data.data.slice(0,200));
+      this.store.cards  = response.data.data.slice(0,200);
+
+    });
+      }
+  },
+
+
+  created() {
+    axios
+    .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    .then((response) => {
+      console.log(response.data.data.slice(0,200));
+      this.store.cards  = response.data.data.slice(0,200);
+    });
   }
 }
 
@@ -26,7 +49,7 @@ export default {
 <template>
     
   <main class="py-3">
-    <DropDown />
+    <DropDown @search="filterArchetype()"/>
     <div class="container bg-light">
 
         <CardFound :cardsList="store.cards.length" /> 
