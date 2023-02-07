@@ -40,12 +40,12 @@ export default {
           
 
             <div  class="dropdown py-3">
-              <select v-model="store.variableArchetype" class="form-select multiple w-25" aria-label="Default select example">
+              <select @change="$emit('search')" v-model="store.variableArchetype" class="form-select multiple w-25" aria-label="Default select example">
                 <option  selected value="">Archetype</option >
                 <option 
-                @click="$emit('search')"
+                
                 v-for="archetype in store.archetypes" 
-                value="1"
+                :value="archetype.archetype_name"
                 >{{archetype.archetype_name }}
                 </option>
                  

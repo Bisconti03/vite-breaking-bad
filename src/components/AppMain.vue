@@ -26,8 +26,8 @@ export default {
         axios
       .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.variableArchetype)
       .then((response) => {
-      console.log(response.data.data.slice(0,200));
-      this.store.cards  = response.data.data.slice(0,200);
+      console.log(response.data.data);
+      this.store.cards  = response.data.data;
 
     });
       }
@@ -38,8 +38,8 @@ export default {
     axios
     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
     .then((response) => {
-      console.log(response.data.data.slice(0,200));
-      this.store.cards  = response.data.data.slice(0,200);
+      console.log(response.data.data);
+      this.store.cards  = response.data.data ;
     });
   }
 }
