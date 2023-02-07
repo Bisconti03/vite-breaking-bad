@@ -1,7 +1,9 @@
 <script >
 
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  
 }
 
 </script>
@@ -9,7 +11,9 @@ export default {
 <template>
   <header>
     <header class="">
+      
       <div class="row g-0">
+        
         <div class="col-1">
 
           <img src="../assets/img/Yu-Gi-Oh!_(Logo).jpg" class="w-100" alt="">
@@ -24,8 +28,9 @@ export default {
           </h1>
 
         </div>
-
+        
       </div>
+      
     </header>
   </header>
 </template>

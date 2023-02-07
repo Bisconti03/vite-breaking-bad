@@ -1,16 +1,12 @@
-<script >
+<script>
 import CardFound from './CardFound.vue'
 import Card from './Card.vue'
 import {store} from '../store';
+import DropDown from './DropDown.vue';
 
 export default {
   name: 'AppMain',
-//   props: {
-//         cardsList : {
-//             type : Array,
-//             default: []
-//         }
-//   },
+
   data() {
     return {
       store
@@ -21,6 +17,7 @@ export default {
   components: {
     CardFound,
     Card,
+    DropDown,
   }
 }
 
@@ -29,6 +26,7 @@ export default {
 <template>
     
   <main class="py-3">
+    <DropDown />
     <div class="container bg-light">
 
         <CardFound :cardsList="store.cards.length" /> 

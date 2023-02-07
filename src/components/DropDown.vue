@@ -1,7 +1,33 @@
 <script >
+import axios from 'axios';
+import {store} from '../store';
 
 export default {
-  name: 'DropDown'
+  name: 'DropDown',
+
+  data() {
+    return {
+      store,
+      
+    }
+  },
+
+
+
+
+  created() {
+    axios
+    .get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+    .then((response) => {
+
+      
+
+      this.store.archetypes  = response.data.results;
+
+      console.log(response)
+
+    });
+  }
 }
 
 </script>
@@ -10,18 +36,18 @@ export default {
   <div class="container">
     <div class="row">
         <div class="col bg-primary">
-            <div class="dropdown py-3">
-                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Alien
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+            <div  class="dropdown py-3">
+              <select  class="form-select multiple w-25" aria-label="Default select example">
+                <option selected>Archetype</option >
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
             </div>
 
         </div>
+
+       
 
     </div>
   </div>
